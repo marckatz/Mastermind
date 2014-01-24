@@ -38,6 +38,7 @@ public class GUI extends JFrame implements ActionListener{
         frame.setTitle("Mastermind");
 
 	tempName[0][0] = new JButton("CLEAR");
+	tempName[0][0].addActionListener(this);
 	tempName[0][0].setBackground(Color.WHITE);
 	tempName[0][0].setActionCommand("CLEAR");
 	panel.add(tempName[0][0]);
@@ -51,6 +52,7 @@ public class GUI extends JFrame implements ActionListener{
 	}
 
 	tempName[0][5] = new JButton("SUBMIT");
+	tempName[0][5].addActionListener(this);
 	tempName[0][5].setBackground(Color.WHITE);
 	tempName[0][5].setActionCommand("SUBMIT");
 	panel.add(tempName[0][5]);
@@ -95,6 +97,14 @@ public class GUI extends JFrame implements ActionListener{
 	    selectedColumn = -1;
 	    selectedColor = Color.MAGENTA;
 	}
+        if("CLEAR".equals(e.getActionCommand())){
+	    for (int x = 1; x < 5; x++){
+		tempName[0][x].setBackground(Color.MAGENTA);
+	    }
+	    selectedColumn = -1;
+	    selectedColor = Color.MAGENTA;
+	}
+	
     }
 
     public static void main(String[] args) {
