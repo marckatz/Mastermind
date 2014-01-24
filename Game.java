@@ -91,7 +91,7 @@ public class Game{
 		System.out.println("You win!\n" + _masterRow + " is " + newRow);
 		won = true;
 	    }
-	    else if (_counter == 10){}
+	    else if (_counter == 10){_counter++}
 	    else{
 		rightS = rightSpots(newRow);
 		rightC = rightColors(newRow) - rightS;
